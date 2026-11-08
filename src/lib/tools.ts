@@ -189,8 +189,7 @@ export function memoryUse(tool: Tool, key: 'idleMb' | 'paclitaxelMb') {
   if (!memory) return 'Not measured';
   const value = memory[key];
   if (value === null) return memory.note ?? 'Not measured';
-  const panel = key === 'paclitaxelMb' && memory.paclitaxelPanelOpenMb ? `, ${Math.round(memory.paclitaxelPanelOpenMb)} MB while the window is redrawing` : '';
-  return `${Math.round(value)} MB${memory.baselineMb ? `, of which ${Math.round(memory.baselineMb)} MB is the empty browser` : ''}${panel}`;
+  return `${Math.round(value)} MB${memory.baselineMb ? `, of which ${Math.round(memory.baselineMb)} MB is the empty browser` : ''}`;
 }
 
 export const filterGroups: { id: string; label: string; options: [string, string][] }[] = [

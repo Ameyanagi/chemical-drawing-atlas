@@ -30,9 +30,9 @@
     "offline": true
   },
   "version": {
-    "name": "v0.13.1",
-    "date": "2026-10-26",
-    "source": "https://github.com/Ameyanagi/ReShiki/releases/tag/v0.13.1"
+    "name": "v0.14.0",
+    "date": "2026-11-08",
+    "source": "https://github.com/Ameyanagi/ReShiki/releases/tag/v0.14.0"
   },
   "engine": {
     "rendering": "Iced Canvas and a shared vector scene for SVG, vector PDF and raster PNG",
@@ -77,7 +77,7 @@
       "note": "Automatic, centered, left and right placement.",
       "shot": {
         "image": "evidence/reshiki/f-double-bond-side.webp",
-        "caption": "Double-bond placement menu with centered, left and right options."
+        "caption": "Double-bond placement menu with automatic, centered, left and right options."
       }
     },
     "rings": {
@@ -97,7 +97,7 @@
       "note": "Inserted Chair A from the ring menu.",
       "shot": {
         "image": "evidence/reshiki/f-conformers.webp",
-        "caption": "A chair ring on the canvas and the conformers category."
+        "caption": "A chair ring on the canvas and the template categories."
       }
     },
     "chains": {
@@ -157,7 +157,7 @@
       "note": "Lasso selection, rotation, flips and resizing.",
       "shot": {
         "image": "evidence/reshiki/f-selection-tools.webp",
-        "caption": "Selected structure with resize and rotation handles beside selection tools."
+        "caption": "Selected L-alanine with resize and rotation handles beside the selection tools."
       }
     },
     "perspective": {
@@ -177,7 +177,7 @@
       "note": "Drew forward and equilibrium arrows.",
       "shot": {
         "image": "evidence/reshiki/f-reaction-arrows.webp",
-        "caption": "Forward and equilibrium arrows on the canvas."
+        "caption": "Equilibrium and forward reaction arrows on the canvas."
       }
     },
     "mechanism-arrows": {
@@ -187,7 +187,7 @@
       "note": "Drew full and half-head curves; dragged bend handle.",
       "shot": {
         "image": "evidence/reshiki/f-mechanism-arrows.webp",
-        "caption": "Curved arrows and the selected arrow’s bend controls."
+        "caption": "Selected curved electron arrow with bend handles and its properties."
       }
     },
     "reaction-data": {
@@ -305,7 +305,7 @@
       "note": "Embedded PNG, JPEG, TIFF and WebP pictures; no cropping.",
       "shot": {
         "image": "evidence/reshiki/f-pictures.webp",
-        "caption": "Structure import panel offers Paste picture and picture file import."
+        "caption": "Structure import panel offers Choose file and Paste picture."
       }
     },
     "tlc-tables": {
@@ -341,7 +341,7 @@
       "note": "Caffeine: C8H10N4O2, 194.194 g/mol.",
       "shot": {
         "image": "evidence/reshiki/f-formula-mass.webp",
-        "caption": "Molecular properties show C2H4 and 28.054 g/mol for the selection."
+        "caption": "Molecular properties show C27H46O and 386.664 g/mol."
       },
       "engine": {
         "library": "Ported from RDKit (Rust)",
@@ -365,7 +365,7 @@
       "note": "Ethanol name inserted an editable structure and default caption.",
       "shot": {
         "image": "evidence/reshiki/f-name-to-structure.webp",
-        "caption": "Ethanol name input and the resulting structure on the canvas."
+        "caption": "Ethanol name import and the resulting structure on the canvas."
       },
       "engine": {
         "library": "Ported from OPSIN (Rust); PubChem web service (optional remote lookup)",
@@ -379,7 +379,7 @@
       "note": "Alanine generated (2S)-2-aminopropanoic acid using local subset rules.",
       "shot": {
         "image": "evidence/reshiki/f-structure-to-name.webp",
-        "caption": "Selected alanine structure and its generated systematic name."
+        "caption": "Selected L-alanine and its generated name, marked Preferred IUPAC name."
       },
       "engine": {
         "library": "Ported from openclatura (Rust)",
@@ -393,7 +393,7 @@
       "note": "Ethanol methyl: 1.050 ppm; two other sites withheld.",
       "shot": {
         "image": "evidence/reshiki/f-nmr-prediction.webp",
-        "caption": "Ethanol structure and predicted proton NMR shifts."
+        "caption": "Ethanol structure and its predicted proton NMR shifts."
       },
       "engine": {
         "library": "In-house (Rust HOSE predictor; bundled nmrshiftdb2 data)",
@@ -425,7 +425,7 @@
       "note": "Desktop Codex assistant reconstructs images into editable previews; requires internet.",
       "shot": {
         "image": "evidence/reshiki/f-image-to-structure.webp",
-        "caption": "Assistant panel offers an example image and image paste prompt."
+        "caption": "Assistant prompt accepts a description or a pasted image."
       },
       "engine": {
         "library": "OpenAI Codex (remote model via local app-server); In-house (Rust drawing reconstruction)",
@@ -433,10 +433,14 @@
       }
     },
     "database-lookup": {
-      "status": "partial",
-      "evidence": "docs",
-      "source": "https://reshiki.com/developer/feature-status/#chemistry-reactions-and-specialist-workflows",
-      "note": "Online structure lookup is in the nightly build, not in stable 0.13.1."
+      "status": "yes",
+      "evidence": "tested",
+      "source": "https://github.com/Ameyanagi/ReShiki/releases/tag/v0.14.0",
+      "note": "Look up online… returned caffeine, PubChem CID 2519, after the query was confirmed.",
+      "shot": {
+        "image": "evidence/reshiki/f-database-lookup.webp",
+        "caption": "PubChem lookup returned caffeine, CID 2519, for the name caffeine."
+      }
     },
     "model-3d": {
       "status": "yes",
@@ -445,7 +449,7 @@
       "note": "Built cholesterol from SMILES; rotated ball-and-stick model by dragging.",
       "shot": {
         "image": "evidence/reshiki/f-model-3d.webp",
-        "caption": "Ball-and-stick model selected on the canvas with 3D tilt controls."
+        "caption": "Ball-and-stick 3D model of cholesterol on the canvas."
       },
       "engine": {
         "library": "In-house (Rust viewer); COSMolKit (Rust conformer generation)",
@@ -465,7 +469,7 @@
       "note": "Exported cholesterol CDXML and reopened the drawing.",
       "shot": {
         "image": "evidence/reshiki/f-cdxml.webp",
-        "caption": "Copy as menu includes CDXML and CDX."
+        "caption": "Structure export menu offers a CDXML drawing."
       },
       "engine": {
         "library": "Ported from RDKit External/ChemDraw and Glysade/chemdraw (Rust reader); In-house (Rust writer)",
@@ -476,10 +480,10 @@
       "status": "partial",
       "evidence": "docs",
       "source": "https://reshiki.com/developer/clipboard/#boundaries",
-      "note": "Bounded read/write clipboard subset; desktop file Open/Export UI lacks CDX.",
+      "note": "Bounded subset: Open and Copy as offer CDX; structure export does not.",
       "shot": {
         "image": "evidence/reshiki/f-cdx.webp",
-        "caption": "Copy as menu includes CDX and CDXML."
+        "caption": "Copy as menu includes CDXML and CDX."
       },
       "engine": {
         "library": "In-house (Rust CDX codec); Ported from RDKit External/ChemDraw and Glysade/chemdraw (Rust molecular reader)",
@@ -507,7 +511,7 @@
       "note": "Imported fixture SMILES; exported cholesterol SMILES text.",
       "shot": {
         "image": "evidence/reshiki/f-smiles.webp",
-        "caption": "Structure import panel detects the entered text as SMILES."
+        "caption": "Structure export menu offers SMILES text."
       },
       "engine": {
         "library": "Ported from RDKit (Rust parser and writer)",
@@ -521,7 +525,7 @@
       "note": "InChI paste/import and explicit identifier copying.",
       "shot": {
         "image": "evidence/reshiki/f-inchi.webp",
-        "caption": "Structure and exchange panel lists InChI among its formats."
+        "caption": "Structure export menu offers an InChI identifier."
       },
       "engine": {
         "library": "Ported from InChI and RDKit (Rust, cosmolkit-inchi)",
@@ -565,7 +569,7 @@
       "note": "Default model PNG: 2973×1198 pixels, 1200 dpi metadata.",
       "shot": {
         "image": "evidence/reshiki/f-png-export.webp",
-        "caption": "Drawing style panel lists PNG output up to 1200 dpi."
+        "caption": "Figure export set to PNG, up to 1200 dpi."
       }
     },
     "clipboard-chemdraw": {
@@ -575,7 +579,7 @@
       "note": "Editable desktop subset; unsupported objects may become pictures or simplified copies.",
       "shot": {
         "image": "evidence/reshiki/f-clipboard-chemdraw.webp",
-        "caption": "Copy as menu includes CDX and CDXML."
+        "caption": "Copy as menu includes CDXML and CDX."
       }
     },
     "office": {
@@ -585,10 +589,10 @@
       "note": "Windows desktop Office OLE editing; Mac Office lacks this workflow."
     },
     "python-api": {
-      "status": "partial",
-      "evidence": "docs",
-      "source": "https://reshiki.com/developer/changes-unreleased/",
-      "note": "Python bindings are in the nightly build, not in stable 0.13.1."
+      "status": "yes",
+      "evidence": "tested",
+      "source": "https://pypi.org/project/reshiki/",
+      "note": "reshiki 0.14.0 from PyPI drew, converted and analysed caffeine."
     },
     "ts-api": {
       "status": "yes",
@@ -617,7 +621,7 @@
     "embed": {
       "status": "yes",
       "evidence": "docs",
-      "source": "https://github.com/Ameyanagi/ReShiki/blob/v0.13.1/packages/editor/README.md",
+      "source": "https://github.com/Ameyanagi/ReShiki/blob/v0.14.0/packages/editor/README.md",
       "note": "Call mount(element); alternatively use <reshiki-editor> or embed() iframe."
     },
     "ai-assistant": {
@@ -627,7 +631,7 @@
       "note": "Desktop only; requires local Codex sign-in and internet.",
       "shot": {
         "image": "evidence/reshiki/f-ai-assistant.webp",
-        "caption": "Assistant panel offers a molecule prompt and example image."
+        "caption": "Assistant panel with a prompt field and a Codex sign-in card."
       }
     },
     "office-ole": {
@@ -644,9 +648,9 @@
     }
   },
   "caveats": [
-    "CDX/CDXML interchange covers a subset; desktop UI exposes CDX through clipboard only.",
+    "CDX/CDXML interchange covers a subset; CDX can be opened and copied, but not exported as a file.",
     "Editable Office objects require Windows; the browser omits Office integration, printing and the assistant.",
-    "Drawings saved by 0.13.1 cannot be opened in 0.13.0 or earlier."
+    "Some drawings saved by 0.14.0, such as ones with a 3D model made in 0.14.0, cannot be opened in 0.13.1."
   ],
   "github": {
     "url": "https://github.com/Ameyanagi/ReShiki",
@@ -659,15 +663,15 @@
     "archived": false
   },
   "hands": {
-    "testedVersion": "0.13.1",
-    "testedOn": "2026-11-05",
+    "testedVersion": "0.14.0",
+    "testedOn": "2026-11-08",
     "platform": "macOS 27.0.1 arm64",
     "route": "dmg",
-    "artifact": "reshiki-0.13.1-macos-arm64.dmg",
+    "artifact": "reshiki-0.14.0-macos-arm64.dmg",
     "ran": true,
     "failure": null,
-    "downloadBytes": 33843741,
-    "installedBytes": 82063360,
+    "downloadBytes": 40166267,
+    "installedBytes": 100282368,
     "captures": [
       {
         "fixture": "simple",
@@ -704,33 +708,32 @@
       "note": "Original light appearance restored before quitting."
     },
     "memory": {
-      "idleMb": 208.13,
-      "paclitaxelMb": 217.1,
+      "idleMb": 206.42,
+      "paclitaxelMb": 225.91,
       "baselineMb": null,
-      "rssIdleMb": 182.09,
-      "rssPaclitaxelMb": 238.31,
+      "rssIdleMb": 193.88,
+      "rssPaclitaxelMb": 255.72,
       "runs": 3,
       "processes": 5,
       "method": "Median summed per-process phys_footprint; descendants plus lsappinfo coalition; fresh HOME; MiB.",
-      "note": "Paclitaxel on the canvas with nothing redrawing. Redrawing adds about 126 MB, released about a second after it stops. The blinking text cursor in the open Import panel keeps the window redrawing.",
-      "paclitaxelPanelOpenMb": 343.32
+      "note": "Paclitaxel on the canvas with the Import panel closed; 225 MB with it open."
     },
     "observations": [
       "Default JACS/ACS style: Arial 10 pt, 14.4 pt bonds, 0.6 pt lines.",
       "Caffeine and paclitaxel received automatic SMILES layouts without cleanup.",
-      "Paclitaxel’s default layout included wedge and hashed bonds.",
+      "Paclitaxel’s default layout included wedge and hashed bonds, and explicit H on two ring-fusion carbons.",
       "Cholesterol built a rotatable ball-and-stick model from SMILES.",
-      "Default figure format was PDF; PNG export recorded 1200 dpi."
+      "Default figure format was PDF; PNG export is listed as up to 1200 dpi."
     ]
   },
   "perf": {
     "kind": "desktop",
-    "launchMs": 375,
-    "idleMb": 126,
+    "launchMs": 380,
+    "idleMb": 147,
     "loadMs": null,
     "transferBytes": null
   },
-  "downloadBytes": 33843741,
+  "downloadBytes": 40166267,
   "references": [
     "https://github.com/Ameyanagi/ReShiki",
     "https://reshiki.com/developer/clipboard/"
@@ -785,7 +788,7 @@
   "otherLanguages": [
     {
       "language": "Python",
-      "role": "Bindings, in the nightly build only"
+      "role": "Bindings"
     },
     {
       "language": "JavaScript",
@@ -793,7 +796,7 @@
     }
   ],
   "enginesChecked": true,
-  "languageNote": "Python bindings are in the nightly build. TypeScript is for bindings and tests.",
+  "languageNote": "Python and TypeScript are for bindings and tests.",
   "thirdParty": {
     "summary": "MIT or Apache compatible code. Bundled NMR data is share-alike, ChEBI aliases are CC BY 4.0, and fonts are OFL-1.1 and Bitstream Vera.",
     "source": "https://github.com/Ameyanagi/ReShiki/blob/main/NOTICE",

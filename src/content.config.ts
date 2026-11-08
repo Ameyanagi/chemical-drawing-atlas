@@ -92,7 +92,7 @@ const tools = defineCollection({
       canvasLight: z.string().nullable(),
       canvasDark: z.string().nullable(),
       memory: z.object({
-        idleMb: z.number().nullable(), paclitaxelMb: z.number().nullable(), baselineMb: z.number().nullable().optional(), paclitaxelPanelOpenMb: z.number().optional(),
+        idleMb: z.number().nullable(), paclitaxelMb: z.number().nullable(), baselineMb: z.number().nullable().optional(),
         rssIdleMb: z.number().nullable().optional(), rssPaclitaxelMb: z.number().nullable().optional(),
         runs: z.number(), processes: z.number().nullable().optional(), method: z.string().nullable().optional(), note: z.string().nullable().optional(),
       }).nullable(),

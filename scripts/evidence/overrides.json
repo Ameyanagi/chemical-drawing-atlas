@@ -62,21 +62,28 @@
     "languages": [
       "Rust"
     ],
-    "languageNote": "Python bindings are in the nightly build. TypeScript is for bindings and tests.",
+    "languageNote": "Python and TypeScript are for bindings and tests.",
     "features": {
-      "python-api": {
-        "status": "partial",
-        "note": "Python bindings are in the nightly build, not in stable 0.13.1."
-      },
       "database-lookup": {
-        "status": "partial",
-        "note": "Online structure lookup is in the nightly build, not in stable 0.13.1."
+        "status": "yes",
+        "evidence": "tested",
+        "source": "https://github.com/Ameyanagi/ReShiki/releases/tag/v0.14.0",
+        "note": "Look up online… returned caffeine, PubChem CID 2519, after the query was confirmed."
+      },
+      "python-api": {
+        "status": "yes",
+        "evidence": "tested",
+        "source": "https://pypi.org/project/reshiki/",
+        "note": "reshiki 0.14.0 from PyPI drew, converted and analysed caffeine."
+      },
+      "cdx": {
+        "note": "Bounded subset: Open and Copy as offer CDX; structure export does not."
       }
     },
     "otherLanguages": [
       {
         "language": "Python",
-        "role": "Bindings, in the nightly build only"
+        "role": "Bindings"
       },
       {
         "language": "JavaScript",
@@ -84,8 +91,14 @@
       }
     ],
     "embed": {
-      "limit": "Browser preview. One editor per page, or use iframes. Printing, assistant and Office need the desktop app."
-    }
+      "limit": "Browser preview. One editor per page, or use iframes. Printing, assistant and Office need the desktop app.",
+      "source": "https://github.com/Ameyanagi/ReShiki/blob/v0.14.0/packages/editor/README.md"
+    },
+    "caveats": [
+      "CDX/CDXML interchange covers a subset; CDX can be opened and copied, but not exported as a file.",
+      "Editable Office objects require Windows; the browser omits Office integration, printing and the assistant.",
+      "Some drawings saved by 0.14.0, such as ones with a 3D model made in 0.14.0, cannot be opened in 0.13.1."
+    ]
   },
   "p112": {
     "builtOn": {

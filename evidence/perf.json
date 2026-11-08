@@ -15,8 +15,8 @@
   },
   "p02": {
     "kind": "desktop",
-    "launchMs": 375,
-    "idleMb": 126,
+    "launchMs": 380,
+    "idleMb": 147,
     "loadMs": null,
     "transferBytes": null
   },

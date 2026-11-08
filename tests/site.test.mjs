@@ -113,11 +113,14 @@ test('OPSIN is never credited with generating names, because it only reads them'
   }
 });
 
-test('ReShiki Python bindings are marked as nightly only', () => {
+test('ReShiki marks follow the release we tested, where Python and lookup are stable', () => {
   const reshiki = tools.find((tool) => tool.slug === 'reshiki');
-  assert.equal(reshiki.features['python-api'].status, 'partial');
-  assert.match(reshiki.features['python-api'].note, /nightly/);
-  assert.match(reshiki.features['database-lookup'].note, /nightly/);
+  assert.equal(reshiki.hands.testedVersion, '0.14.0');
+  for (const id of ['python-api', 'database-lookup']) {
+    assert.equal(reshiki.features[id].status, 'yes', id);
+    assert.equal(reshiki.features[id].evidence, 'tested', id);
+    assert.doesNotMatch(reshiki.features[id].note, /nightly/, id);
+  }
 });
 
 test('ChemDraw API marks match the edition we tested, and embedding is its own section', async () => {
