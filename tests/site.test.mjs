@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = path.resolve('dist');
 const { tools, features } = JSON.parse(await fs.readFile(path.join(root, 'data/tools.json'), 'utf8'));
@@ -201,6 +202,16 @@ test('Mark tooltips end the note with one full stop', async () => {
   for (const tool of tools) {
     const page = await fs.readFile(path.join(root, 'tools', tool.slug, 'index.html'), 'utf8');
     assert.doesNotMatch(page, /(\.\.|[^.!?]) Opens the (cited page|screenshot)/, tool.name);
+  }
+});
+
+test('Evidence images carry their content hash, so a replaced image is not read from a cache', async () => {
+  const html = await fs.readFile(path.join(root, 'drawings/index.html'), 'utf8');
+  const links = [...html.matchAll(/src="\/(evidence\/[^"?]+)\?v=([0-9a-f]{10})"/g)];
+  assert(links.length > 100, `${links.length} hashed images`);
+  assert.doesNotMatch(html, /src="\/evidence\/[^"?]+"/);
+  for (const [, file, version] of links) {
+    assert.equal(version, createHash('sha256').update(await fs.readFile(path.join(root, file))).digest('hex').slice(0, 10), file);
   }
 });
 
